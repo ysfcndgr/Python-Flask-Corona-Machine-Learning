@@ -333,7 +333,7 @@ def coronaTotalData():
     conn = http.client.HTTPSConnection("api.collectapi.com")
     headers = {
     'content-type': "application/json",
-    'authorization': "apikey 6uiFlc0TsH2j1Sx16DeKdD:4Yq9lpUjXarqDmKeOyOWbZ"
+    'authorization': "apikey ENTER YOUR API KEY HERE"
         }
     conn.request("GET", "/corona/totalData", headers=headers)
     res = conn.getresponse()
@@ -398,7 +398,7 @@ def coronaNews():
 
     headers = {
     'content-type': "application/json",
-    'authorization': "apikey 6uiFlc0TsH2j1Sx16DeKdD:4Yq9lpUjXarqDmKeOyOWbZ"
+    'authorization': "apikey ENTER YOUR API KEY HERE"
     }
     conn.request("GET", "/corona/coronaNews", headers=headers)
     res = conn.getresponse()
@@ -414,7 +414,7 @@ def countryByName(country):
     conn = http.client.HTTPSConnection("api.collectapi.com")
     headers = {
     'content-type': "application/json",
-    'authorization': "apikey 6uiFlc0TsH2j1Sx16DeKdD:4Yq9lpUjXarqDmKeOyOWbZ"
+    'authorization': "apikey ENTER YOUR API KEY HERE"
      }
     
     conn.request("GET","/corona/countriesData?country="+country ,headers=headers)
