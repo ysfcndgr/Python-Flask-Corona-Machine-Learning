@@ -1,0 +1,9 @@
+Flask
+flask-mysqldb
+Flask-WTF
+passlib
+pandas
+sklearn
+xlrd
+
+Eniyiparoladeseni429735403

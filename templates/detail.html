@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Detail
+{% endblock %}
+
+{% block body %}
+{% if session["status"] == 2  %}
+<br>
+<div class="alert alert-danger text-center" role="alert">
+  You do not have permission to see the page<br>
+    If you think this is a mistake, you can contact us!
+  </div>
+{% else %}
+{% if article %}
+
+<h2 class="text-center" style="color: floralwhite;" ></h1>
+<hr>
+
+<div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="display-4">{{article.title}}</h1>
+      <p class="lead">{{article.content|safe}}</p>
+    </div>
+    <small class="text-center">author:{{article.author}}</small>
+  </div>
+
+
+
+{% else %}
+<div class="alert alert-danger">No Article!</div>
+{% endif %}
+{% endif %}
+{% endblock %}

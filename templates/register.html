@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block body %}
+{% from "includes/_formhelpers.html" import render_field %}
+
+<form class="text-center" style="color: aliceblue;" method="post">
+ 
+    {{ render_field(form.name,class="form-control") }}
+    {{ render_field(form.uname,class="form-control") }}
+    {{ render_field(form.email,class="form-control") }}
+    {{ render_field(form.pwd,class="form-control") }}
+    {{ render_field(form.confirm,class="form-control") }}
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+User Settings
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">Welcome {{session['uname']}}</h1>
+      <p class="lead"></p>
+    </div>
+  </div>
+
+<br>
+<br>
+
+  {% if articles %}
+  <table class="table table-borderless table-dark">
+    <thead>
+      <tr>
+        
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Username</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Ban</th>
+        <th scope="col">Member Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    {% for article in articles %}
+    <tr>
+      
+      <th scope="row">{{article.id}}</th>
+      <td colspan="row">{{article.name}}</td>
+      <td> {{article.email}}</td>
+      <td>{{article.uname}}</td>
+      <td> <a class="btn btn-success" href="/edituser/{{article.id}}">Edit</a> </td>
+     
+      {% if article.status ==2 %}
+      <td><a class="btn btn-success" href="/removeban/{{article.id}}">Remove Ban</a> </td>
+      {% else %}
+      <td><a class="btn btn-danger" href="/ban/{{article.id}}">Ban</a> </td>
+      {% endif %}
+
+      
+      {% if article.status !=1 %}
+      <td><a class="btn btn-success" href="/makeadmin/{{article.id}}">Make Admin</a> </td>
+      {% else %}
+      <td><a class="btn btn-danger" href="/removeban/{{article.id}}">Make Member</a> </td>
+      {% endif %}
+
+ 
+
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+<div class="alert alert-danger">Kullanıcı Yok!</div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{%block body%}
+<br>
+<div class="alert alert-primary text-center" role="alert">
+Contact
+</div>
+
+<form method="POST" >
+    <div class="form-group" >
+      <label for="exampleFormControlInput1" style="color: floralwhite;">Email address</label>
+      <input type="email" class="form-control" name="email" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput2" style="color: floralwhite;">Name</label>
+        <input  class="form-control" name="name" placeholder="John">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput3" style="color: floralwhite;">Surname</label>
+        <input  class="form-control" name="surname" placeholder="Wick">
+      </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1" style="color: floralwhite;">Message</label>
+      <textarea class="form-control" placeholder="Don't kill my dog, don't enter my house" name="message" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-info">Submit</button>
+
+  </form>
+{%endblock%}

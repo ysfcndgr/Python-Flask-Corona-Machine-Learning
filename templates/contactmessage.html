@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+User Settings
+{% endblock %}
+
+{% block body %}
+<br>
+
+
+<br>
+<br>
+  {% if messages %}
+
+    {% for message in messages %}
+  
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">{{message.email}}</h1>
+          <p class="lead">
+            Name  : {{message.name}}<br>
+            Surname:{{message.surname}}<br>
+            Message:{{message.message}}
+        </div>
+      </div>
+      
+
+    {% endfor %}
+ 
+  {% else %}
+<div class="alert alert-danger">No Message!</div>
+  {% endif %}
+{% endblock %}

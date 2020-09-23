@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+
+{% block body %}
+<div class="card-group" style="flex-direction: row;flex-wrap: wrap;"  >
+{% for i in range(0,coronacount) %}
+
+
+<div style="flex-grow:1;flex-shrink:2;flex-basis:50%;" class="card" >
+    <img class="card-img-top " src="{{coronanews[i]['image']}} "alt="Card image cap">
+    <div class="card-body ">
+         <h5 class="card-title">{{coronanews[i]['name']}}</h5>
+      <p class="card-text">{{coronanews[i]['description']}}</p>
+    </div>
+    <div class="card-footer">
+    <a  href="{{coronanews[i]['url']}}"><h4 class="text-center card-text">{{coronanews[i]['source']}}</h4></a>
+
+  </div>
+
+</div>
+
+ {% endfor %}
+ 
+</div>
+{% endblock %}

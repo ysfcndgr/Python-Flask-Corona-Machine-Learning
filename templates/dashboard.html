@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">Welcome {{session['uname']}}</h1>
+      <p class="lead"></p>
+    </div>
+  </div>
+<div class="text-center">
+  <a href="/addarticle" class="btn btn-success">Makale Add</a>
+  <a href="/usersettings" class="btn btn-success">User Settings</a>
+  <a href="/contactmessage" class="btn btn-success">Contact</a>
+</div>
+<br>
+<br>
+  {% if articles %}
+  <table class="table table-borderless table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">DateTime</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for article in articles %}
+    <tr>
+      <th scope="row">{{article.id}}</th>
+      <td colspan="row"><a href="/blog/{{article.id}}">{{article.title}} </a></td>
+      <td> {{article.author}}</td>
+      <td>{{article.created_date}}</td>
+      <td> <a class="btn btn-success" href="/edit/{{article.id}}">Edit</a> </td>
+      <td> <a class="btn btn-danger" href="/delete/{{article.id}}">Delete</a> </td>
+    </tr>
+
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+<div class="alert alert-danger">No Article!</div>
+  {% endif %}
+{% endblock %}

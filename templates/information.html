@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Information
+{% endblock %}
+
+{% block body %}
+<br>
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+
+<div class="card-deck">
+    <div class="card">
+      <img src="https://image.flaticon.com/icons/svg/3185/3185065.svg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">Total Death</h5>
+        <p class="card-text text-center" style="font-size: xx-large;">{{data['result']['totalDeaths']}}</p>
+      </div>
+     
+    </div>
+    <div class="card">
+      <img src="https://icons.iconarchive.com/icons/treetog/junior/256/performance-tools-icon.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">Total Cases</h5>
+        <p class="card-text text-center" style="font-size: xx-large;">{{data['result']['totalCases']}}</p>
+      </div>
+      
+    </div>
+    <div class="card">
+      <img src="https://image.flaticon.com/icons/svg/3034/3034882.svg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">Total Recovery</h5>
+        <p class="card-text text-center" style="font-size: xx-large;">{{data['result']['totalRecovered']}}</p>
+      </div>
+      
+    </div>
+  </div>
+
+ <br>
+<form action="/information" method="POST">
+
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+     <center>
+      <h1 class="display-4">Country
+      </h1>
+      <div class="form-group col-md-4">
+        <select name="countrys" id="inputState" class="form-control">
+            {%for i in range(0, 215)%} 
+    
+          <option>{{countrydata[i]['country']}}</option>
+          {%endfor%} 
+        </select>
+      </div>
+     </center>
+      <p class="lead">Total Cases:<input disabled="true" type="text" class="form-control" id="totalCases">
+        <br>
+        New Cases:        <input disabled="true" type="text" class="form-control"   id="newCases">
+        <br>
+        Total Deaths:        <input disabled="true" type="text" class="form-control"   id="totalDeaths">
+        <br>
+        New Deaths:        <input type="text" disabled="true" class="form-control"   id="newDeaths">
+        <br>
+        Total Recovered:        <input type="text" disabled="true" class="form-control" id="totalRecovered">
+        <br>
+        Active Cases:        <input type="text" disabled="true" class="form-control"   id="activeCases">
+        <br>
+        
+      </p>
+
+    </div>
+  </div>
+
+</form>
+
+<script>
+
+  $(function d(){
+    $("#inputState").on('change',function (e) {
+            var selectedText = $(this).find("option:selected").text();
+            var selectedValue = $(this).val();
+
+    ($.ajax({
+    type:"GET",
+    url:'information/countrybyname/'+selectedText,
+    
+    dataType:"JSON",
+    success : function(data){
+      $('#totalCases').val(data['result'][0]['totalCases']);
+      $('#newCases').val(data['result'][0]['newCases']);
+      $('#totalDeaths').val(data['result'][0]['totalDeaths']);
+      $('#newDeaths').val(data['result'][0]['newDeaths']);
+      $('#totalCases').val(data['result'][0]['totalCases']);
+      $('#totalRecovered').val(data['result'][0]['totalRecovered']);
+      $('#activeCases').val(data['result'][0]['activeCases']);
+
+
+    }
+     }));
+   });
+  });
+</script>
+
+
+{%endblock%}
