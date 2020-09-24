@@ -343,8 +343,6 @@ def coronaTotalData():
 
 _date=190
  
-
-
 def PolynomialRegression():
     import pandas as pd
     import numpy as np
@@ -368,14 +366,10 @@ def PolynomialRegression():
     polys_reg = PolynomialFeatures(degree=5)
     Y_poly = polys_reg.fit_transform(date)
     polz_reg = LinearRegression()
-    polz_reg.fit(Y_poly, death)
-    
-    predictlist = list()
-    for i in range (0,7):
-        predictlist.append(_date+i)      
+    polz_reg.fit(Y_poly, death)      
     coronapredictlist = list()
     deathpredictlist = list()
-    for i in predictlist:
+    for i in range(_date,_date+7):
         coronapredictlist.append(int(pol_reg.predict(poly_reg.fit_transform([[i]]))))
         deathpredictlist.append(int(polz_reg.predict(polys_reg.fit_transform([[i]]))))
     
