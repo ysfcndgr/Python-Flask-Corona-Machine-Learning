@@ -185,7 +185,7 @@ def addarticle():
         cursor.execute(query,(title,session["uname"],content,keywords))
         mysql.connection.commit()
         cursor.close()
-        flash("Makale Başarıyla Eklendi","success")
+        flash("Article Successfully Added","success")
         return redirect(url_for("dashboard"))
     return render_template("addarticle.html")
 
@@ -202,7 +202,7 @@ def contact():
         cursor.execute(query,(email,name,surname,message))
         mysql.connection.commit()
         cursor.close()
-        flash("Mesaj Başarıyla Gönderildi","success")
+        flash("Message Sent Successfully","success")
         return redirect(url_for("contact"))
     else:
         return render_template("contact.html")
@@ -224,7 +224,7 @@ def coronaCountryData():
     conn = http.client.HTTPSConnection("api.collectapi.com")
     headers = {
     'content-type': "application/json",
-    'authorization': "apikey 6uiFlc0TsH2j1Sx16DeKdD:4Yq9lpUjXarqDmKeOyOWbZ"
+    'authorization': "apikey ENTER YOUR API KEY HERE"
     }
     conn.request("GET", "/corona/countriesData", headers=headers)
     res = conn.getresponse()
@@ -244,7 +244,7 @@ def userban(id):
         cursor = mysql.connection.cursor()
         cursor.execute(query2,(2,id))
         mysql.connection.commit()
-        flash("Kullanıcı Engellendi!","success")
+        flash("User Blocked!","success")
         return redirect(url_for("usersettingsdash"))
 
 @app.route("/removeban/<string:id>")
