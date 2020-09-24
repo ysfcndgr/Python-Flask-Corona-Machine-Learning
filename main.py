@@ -341,9 +341,6 @@ def coronaTotalData():
     data = json.loads(data)
     return data
 
-from datetime import datetime  
-from datetime import timedelta  
-
 _date=190
  
 
