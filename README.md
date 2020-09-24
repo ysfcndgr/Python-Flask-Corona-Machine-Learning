@@ -35,3 +35,10 @@ You need to replace line 336, line 401,line 227 and line 417 of the main.py file
 
 ![7](https://user-images.githubusercontent.com/32979760/94159730-8d6f9c80-fe8c-11ea-9544-5728b8edc645.PNG)
 
+![8](https://user-images.githubusercontent.com/32979760/94160473-51890700-fe8d-11ea-917a-38423cf68b00.PNG)
+
+![9](https://user-images.githubusercontent.com/32979760/94160470-50f07080-fe8d-11ea-9bac-0489e1a240d8.PNG)
+
+
+
+
