@@ -1,9 +1,11 @@
 # Flask-Corona-Machine-Learning
-# Setup
+
 # DEMO
 http://coronaprediction.pythonanywhere.com/
+
 Note:The used hosting has limited privileges as it is free. Therefore not all features work.
 
+# Setup
 Go to the directory where the program is located
 
 pip install -r requirements.txt
