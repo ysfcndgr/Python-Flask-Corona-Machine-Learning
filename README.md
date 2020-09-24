@@ -14,4 +14,4 @@ Authorize the default admin account as a member from the new account you have cr
 
 API needed to use information and news pages.
 So become a collectapi member.
-You need to replace line 336, line 401, and line 417 of the main.py file with your api key.
+You need to replace line 336, line 401,line 227 and line 417 of the main.py file with your api key.
