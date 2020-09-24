@@ -21,3 +21,17 @@ So become a collectapi member.
 
 You need to replace line 336, line 401,line 227 and line 417 of the main.py file with your api key.
 
+![1](https://user-images.githubusercontent.com/32979760/94159731-8e083300-fe8c-11ea-9d52-95cb854c7f58.PNG)
+
+![2](https://user-images.githubusercontent.com/32979760/94159735-8ea0c980-fe8c-11ea-8b7d-3395d1270faa.PNG)
+
+![3](https://user-images.githubusercontent.com/32979760/94159720-8b0d4280-fe8c-11ea-987d-1ba92e436813.PNG)
+
+![4](https://user-images.githubusercontent.com/32979760/94159724-8c3e6f80-fe8c-11ea-956b-35651fba6c5d.PNG)
+
+![5](https://user-images.githubusercontent.com/32979760/94159726-8c3e6f80-fe8c-11ea-8058-bc13719f6b96.PNG)
+
+![6](https://user-images.githubusercontent.com/32979760/94159729-8d6f9c80-fe8c-11ea-9612-2b3ef36bbca6.PNG)
+
+![7](https://user-images.githubusercontent.com/32979760/94159730-8d6f9c80-fe8c-11ea-9544-5728b8edc645.PNG)
+
