@@ -1,3 +1,16 @@
+"""
+DEPRECATED: This file has been replaced by app.py
+The new version includes:
+- Better security (CSRF protection, input validation)
+- Modular architecture (separated models, forms, services)
+- Improved error handling and logging
+- Caching for better performance
+- Type hints and documentation
+- Configuration management
+
+Please use: python app.py instead of python main.py
+"""
+
 from flask import Flask,render_template,flash,redirect,url_for,session,logging,request
 from flask_mysqldb import MySQL
 from wtforms import Form,StringField,TextAreaField,PasswordField,validators,SelectField,IntegerField
