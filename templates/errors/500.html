@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Internal Server Error{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div class="error-template">
+                <h1>Oops!</h1>
+                <h2>500 Internal Server Error</h2>
+                <div class="error-details">
+                    Something went wrong on our end. We're working to fix it.
+                </div>
+                <div class="error-actions mt-4">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">
+                        <i class="icon-home"></i>
+                        Take Me Home
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-secondary">
+                        <i class="icon-envelope"></i>
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
