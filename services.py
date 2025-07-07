@@ -3,6 +3,8 @@ import json
 import logging
 import pandas as pd
 import numpy as np
+import html
+import re
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures, LabelEncoder
 from datetime import datetime, date, timedelta
@@ -230,20 +232,17 @@ class ValidationService:
     def sanitize_html(content: str) -> str:
         """Basic HTML sanitization (you might want to use a library like bleach)"""
         # Basic sanitization - in production, use a proper HTML sanitizer
-        import html
         return html.escape(content)
     
     @staticmethod
     def validate_email(email: str) -> bool:
         """Validate email format"""
-        import re
         pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
         return re.match(pattern, email) is not None
     
     @staticmethod
     def validate_url(url: str) -> bool:
         """Validate URL format"""
-        import re
         pattern = r'^https?://(?:[-\w.])+(?:\:[0-9]+)?(?:/(?:[\w/_.])*(?:\?(?:[\w&=%.])*)?(?:\#(?:[\w.])*)?)?$'
         return re.match(pattern, url) is not None
 
